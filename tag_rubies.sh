@@ -10,7 +10,7 @@
 git commit -m "Committing master Dockerfile ($(date '+%Y%m%d'))" Dockerfile
 git push origin master
 
-rubies=$(curl --silent -–show-error https://api.github.com/repos/sstephenson/ruby-build/contents/share/ruby-build | awk '/"name":/ { print $2 }' | tr -d '",')
+rubies=$(curl --silent https://api.github.com/repos/sstephenson/ruby-build/contents/share/ruby-build | awk '/"name":/ { print $2 }' | tr -d '",')
 
 for ruby_tag in $rubies
 do
