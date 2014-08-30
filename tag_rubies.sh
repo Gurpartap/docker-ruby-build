@@ -14,11 +14,11 @@ rubies=$(curl --silent https://api.github.com/repos/sstephenson/ruby-build/conte
 
 for ruby_tag in $rubies
 do
+  git tag -d "${ruby_tag}"
   sed -i '' -e "s/\${ruby_tag}/${ruby_tag}/g" Dockerfile
   git commit -m "Merging changes on master to ${ruby_tag}" Dockerfile
-  git tag -d "${ruby_tag}"
   git tag "${ruby_tag}"
   git checkout -q master
 done
 
-git push --tags
+git push --tags --force
