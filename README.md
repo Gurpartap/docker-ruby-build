@@ -1,6 +1,6 @@
 ## ruby-build for Docker
 
-Install any* ruby.
+Use [**any**](https://github.com/sstephenson/ruby-build/tree/master/share/ruby-build) ruby for your Docker container.
 
 ###### Docker repository
 
@@ -12,10 +12,11 @@ Automated Registry Repo is available at https://registry.hub.docker.com/u/gurpar
 ###### Usage example
 
 ```
-FROM gurpartap/ruby-build:ruby-2.1.2
+FROM gurpartap/ruby-build:2.1.2
+# FROM gurpartap/ruby-build:1.9.3-p547
+# FROM gurpartap/ruby-build:jruby-1.7.9
 
-WORKDIR /app
-ADD ./Gemfile Gemfile
+ADD Gemfile Gemfile
 RUN bundle install
 
 CMD bundle exec rack
