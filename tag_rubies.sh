@@ -12,10 +12,10 @@ git push origin master
 
 rubies=$(curl --silent -–show-error https://api.github.com/repos/sstephenson/ruby-build/contents/share/ruby-build | awk '/"name":/ { print $2 }' | tr -d '",')
 
-for ruby_tag in rubies
+for ruby_tag in $rubies
 do
-  sed -i -e "s/\${ruby_tag}/${ruby_tag}/g" Dockerfile
-  git commit -m "Merging changes on master to ruby-${ruby_tag}"
+  sed -i '' -e "s/\${ruby_tag}/${ruby_tag}/g" Dockerfile
+  git commit -m "Merging changes on master to ${ruby_tag}"
   git tag -d "${ruby_tag}"
   git tag "${ruby_tag}"
   git checkout -q master
