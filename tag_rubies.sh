@@ -18,7 +18,7 @@ do
   sed -i '' -e "s/\${ruby_tag}/${ruby_tag}/g" Dockerfile
   git commit -m "Merging changes on master to ${ruby_tag}" Dockerfile
   git tag "${ruby_tag}"
-  git checkout -q master
+  git reset --hard master
 done
 
 git push --tags --force
