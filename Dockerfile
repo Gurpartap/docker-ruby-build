@@ -1,5 +1,7 @@
 FROM ubuntu:14.04.1
 
+MAINTAINER Gurpartap Singh <hi@gurpartap.com>
+
 #
 # Environment variables
 #
