@@ -23,6 +23,9 @@ RUN locale-gen en_US.UTF-8 ;\
 RUN apt-get update
 
 RUN apt-get install -y \
+autoconf \
+automake \
+bison \
 build-essential \
 curl \
 git-core
@@ -32,13 +35,17 @@ libffi-dev \
 libreadline-dev \
 libsqlite3-dev \
 libssl-dev \
+libtool \
 libxml2-dev \
 libxslt1-dev \
 libyaml-dev \
+ncurses-dev \
+nodejs \
 python-software-properties \
 sqlite3 \
 wget \
 zlib1g-dev \
+
 
 RUN apt-get clean
 
