@@ -28,7 +28,7 @@ automake \
 bison \
 build-essential \
 curl \
-git-core
+git-core \
 libc6-dev \
 libcurl4-openssl-dev \
 libffi-dev \
@@ -46,7 +46,6 @@ sqlite3 \
 wget \
 zlib1g-dev \
 
-
 RUN apt-get clean
 
 #
@@ -63,4 +62,5 @@ RUN cd /usr/local/src/ruby-build && ./install.sh
 
 RUN ruby-build 2.1.2 /usr/local
 
+RUN gem update --system
 RUN gem install --no-rdoc --no-ri bundler
