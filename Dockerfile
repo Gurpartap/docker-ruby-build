@@ -44,7 +44,7 @@ nodejs \
 python-software-properties \
 sqlite3 \
 wget \
-zlib1g-dev \
+zlib1g-dev
 
 RUN apt-get clean
 
