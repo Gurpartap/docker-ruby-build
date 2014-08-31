@@ -24,10 +24,21 @@ RUN apt-get update
 
 RUN apt-get install -y \
 build-essential \
-libssl-dev \
-libreadline-dev \
-wget \
+curl \
 git-core
+libc6-dev \
+libcurl4-openssl-dev \
+libffi-dev \
+libreadline-dev \
+libsqlite3-dev \
+libssl-dev \
+libxml2-dev \
+libxslt1-dev \
+libyaml-dev \
+python-software-properties \
+sqlite3 \
+wget \
+zlib1g-dev \
 
 RUN apt-get clean
 
