@@ -43,6 +43,6 @@ RUN cd /usr/local/src/ruby-build && ./install.sh
 # Install ruby and bundler gem
 #
 
-RUN ruby-build ${ruby_tag} /usr/local
+RUN ruby-build ree-1.8.7-2010.01 /usr/local
 
 RUN gem install --no-rdoc --no-ri bundler
