@@ -43,6 +43,6 @@ RUN cd /usr/local/src/ruby-build && ./install.sh
 # Install ruby and bundler gem
 #
 
-RUN ruby-build ${ruby_tag} /usr/local
+RUN ruby-build 2.0.0-dev /usr/local
 
 RUN gem install --no-rdoc --no-ri bundler
