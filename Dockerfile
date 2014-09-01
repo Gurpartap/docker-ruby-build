@@ -3,7 +3,7 @@ FROM ubuntu:14.04.1
 MAINTAINER Gurpartap Singh <hi@gurpartap.com>
 
 #
-# Environment variables
+# Setup basic environment variables and suppress locale warnings
 #
 
 ENV HOME /root
@@ -11,7 +11,6 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
-
 RUN locale-gen en_US.UTF-8 ;\
     echo 'LANG="en_US.UTF-8"' > /etc/default/locale ;\
     dpkg-reconfigure locales
@@ -21,29 +20,7 @@ RUN locale-gen en_US.UTF-8 ;\
 #
 
 RUN apt-get update
-RUN apt-get install -y \
-autoconf \
-automake \
-bison \
-build-essential \
-curl \
-git-core \
-libc6-dev \
-libcurl4-openssl-dev \
-libffi-dev \
-libreadline-dev \
-libsqlite3-dev \
-libssl-dev \
-libtool \
-libxml2-dev \
-libxslt1-dev \
-libyaml-dev \
-ncurses-dev \
-nodejs \
-python-software-properties \
-sqlite3 \
-wget \
-zlib1g-dev
+RUN xargs apt-get install -y --force-yes < packages.txt
 
 #
 # Install ruby-build

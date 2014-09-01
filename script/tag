@@ -1,5 +1,5 @@
 #!/bin/bash
-# Usage: tag_rubies.sh
+# Usage: tag
 #
 # - push master
 # - read available versions from https://github.com/sstephenson/ruby-build/tree/master/share/ruby-build
