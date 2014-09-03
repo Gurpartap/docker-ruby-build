@@ -20,7 +20,10 @@ RUN locale-gen en_US.UTF-8 ;\
 #
 
 RUN apt-get update
-RUN xargs apt-get install -y --force-yes < packages.txt
+RUN apt-get install -y --force-yes \
+    build-essential curl git-core libffi-dev \
+    libgdbm-dev libncurses5-dev libreadline-dev \
+    libssl-dev libtool libyaml-dev zlib1g-dev 
 
 #
 # Install ruby-build
